@@ -54,11 +54,11 @@ And chat:
 
 ![chat](assets/chat.png)
 
-## Docker 
+## Docker container 
 
-The image has to be run with "--privileged". Also the models are not included in the image. Change the -v fla to point to your models folder. 
+The image has to be run with "--privileged" or the application will not be able to access the NPU. The models are not included in the image. Change the -v flag to point to the models folder. 
 ```
-sudo docker run -d -p 8080:8080 --privileged  -v /location/of/your/models:/app/models --name rkllm martivo/rkllm-gradio:latest
+sudo docker run -d -p 8080:8080 --privileged -v /location/of/your/models:/app/models --name rkllm martivo/rkllm-gradio:latest
 ```
 
 View logs with
