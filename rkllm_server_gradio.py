@@ -55,8 +55,8 @@ if __name__ == "__main__":
                 model_dropdown.input(initialize_model, [model_dropdown], [statusBox])
             with gr.TabItem("Txt2Txt"):
                 txt2txt = gr.ChatInterface(fn=get_RKLLM_output, type="messages")
-                  txt2txt.chatbot.height = "70vh"
-                  txt2txt.chatbot.resizeable = True
+                txt2txt.chatbot.height = "70vh"
+                txt2txt.chatbot.resizeable = True
             with gr.TabItem("Txt2Mesh"):
                 with gr.Row():    
                     with gr.Column(scale=2):
