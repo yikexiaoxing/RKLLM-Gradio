@@ -175,6 +175,7 @@ class RKLLMLoaderClass:
         # print(prompt)
         TOKENIZER_PATH="%s/%s"%(MODEL_PATH,self.st_model_id.replace("/","-"))
         if not os.path.exists(TOKENIZER_PATH):
+            print("Tokenizer not cached locally, downloading to %s"%TOKENIZER_PATH)
             os.mkdir(TOKENIZER_PATH)
             tokenizer = AutoTokenizer.from_pretrained(self.st_model_id, trust_remote_code=True)
             tokenizer.save_pretrained(TOKENIZER_PATH)
