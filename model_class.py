@@ -178,7 +178,7 @@ class RKLLMLoaderClass:
             os.mkdir(TOKENIZER_PATH)
             tokenizer = AutoTokenizer.from_pretrained(self.st_model_id, trust_remote_code=True)
             tokenizer.save_pretrained(TOKENIZER_PATH)
-        else
+        else:
             tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_PATH, trust_remote_code=True)
         prompt = tokenizer.apply_chat_template(prompt, tokenize=True, add_generation_prompt=True)
         # response = {"role": "assistant", "content": "Loading..."}
