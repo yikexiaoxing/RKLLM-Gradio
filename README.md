@@ -54,6 +54,30 @@ And chat:
 
 ![chat](assets/chat.png)
 
+## Docker container 
+
+The image has to be run with "--privileged" or the application will not be able to access the NPU. The models are not included in the image. Change the -v flag to point to the models folder. 
+```
+sudo docker run -d -p 8080:8080 --privileged -v /location/of/your/models:/app/models --name rkllm martivo/rkllm-gradio:latest
+```
+
+View logs with
+```
+sudo docker logs -f rkllm
+```
+
+Stop and remove the container
+```
+sudo docker rm -f rkllm
+```
+
+Build Your own image
+```
+sudo  docker build -t martivo/rkllm-gradio:latest .
+```
+
+
+
 ## Default Version
 
 The default version of the RKLLM library, in `./lib/` is 1.1.2. To change to 1.1.1:
